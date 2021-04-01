@@ -4,7 +4,7 @@
 
 ```
 ./startDatabase.sh
-docker exec -it database  bash
+docker exec -it database bash
 mysql -u root -ppassword
 create database db_credits;
 create database db_customers;
@@ -17,7 +17,7 @@ docker run -p 8002:8002 --network="host" product
 
 ### How to use it
 
-POST request on address `http://localhost:8000/createCredit`
+POST request `http://localhost:8000/createCredit`
 ```
 {
     "creditName":"name",
@@ -29,4 +29,4 @@ POST request on address `http://localhost:8000/createCredit`
 }
 ```
 
-GET request on address `http://localhost:8000/getCredits`
+GET request `http://localhost:8000/getCredits`
