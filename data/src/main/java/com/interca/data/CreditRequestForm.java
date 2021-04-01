@@ -8,8 +8,9 @@ public class CreditRequestForm {
     private final String surname;
     private final String productName;
     private final int value;
-    
-    public CreditRequestForm(String creditName, String firstName, String pesel, String surname, String productName, int value) {
+
+    public CreditRequestForm(String creditName, String firstName, String pesel, String surname, String productName
+        , int value) {
         this.creditName = creditName;
         this.firstName = firstName;
         this.pesel = pesel;
@@ -17,9 +18,10 @@ public class CreditRequestForm {
         this.productName = productName;
         this.value = value;
     }
-    
-    public boolean checkIfNotValid(){
-        return creditName == null || firstName == null || pesel == null || surname == null || productName == null;
+
+    public boolean checkIfNotValid() {
+        return creditName == null || firstName == null || pesel == null || surname == null || productName == null
+            || value == 0;
     }
 
     public void setCreditId(int creditId) {

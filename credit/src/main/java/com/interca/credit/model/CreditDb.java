@@ -24,21 +24,22 @@ public class CreditDb {
     public void setCreditName(String creditName) {
         this.creditName = creditName;
     }
+
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    
+
     private String creditName;
-    
-    public static CreditDb parseFromCreditObject(Credit credit){
+
+    public static CreditDb parseFromCreditObject(Credit credit) {
         CreditDb creditDb = new CreditDb();
         creditDb.setId(credit.getID());
         creditDb.setCreditName(credit.getCreditName());
         return creditDb;
     }
-    
-    public Credit toCreditObject(){
-        return new Credit(getCreditName(),getId());
+
+    public Credit toCreditObject() {
+        return new Credit(getCreditName(), getId());
     }
-    
+
 }

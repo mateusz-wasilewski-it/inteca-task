@@ -19,14 +19,14 @@ public class ProductController {
     @Autowired
     ProductRepository productRepository;
 
-    @PostMapping(value="/createProduct")
-    public String createProduct(@RequestBody Product customer){
+    @PostMapping(value = "/createProduct")
+    public String createProduct(@RequestBody Product customer) {
         ProductDb customerDb = productRepository.save(parseFromProductObject(customer));
         return customer.toString();
     }
 
-    @GetMapping(value="/getProducts")
-    public Product[] getProducts(){
+    @GetMapping(value = "/getProducts")
+    public Product[] getProducts() {
         Iterable<ProductDb> productDbs = productRepository.findAll();
         List<Product> products = new ArrayList<>();
         productDbs.forEach(productDb -> products.add(productDb.toProductObject()));
