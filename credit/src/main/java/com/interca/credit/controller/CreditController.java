@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +38,9 @@ public class CreditController {
     
     @PostMapping("/createCredit")
     public String createCredit(@RequestBody CreditRequestForm creditRequestForm){
+        if(creditRequestForm.checkIfNotValid()){
+            return "sorry some arguments are missing";
+        }
         CreditDb creditDb = creditRepository.save(
             CreditDb.parseFromCreditObject(
                 creditRequestForm.extractCreditObject()));

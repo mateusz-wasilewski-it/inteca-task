@@ -17,6 +17,10 @@ public class CreditRequestForm {
         this.productName = productName;
         this.value = value;
     }
+    
+    public boolean checkIfNotValid(){
+        return creditName == null || firstName == null || pesel == null || surname == null || productName == null;
+    }
 
     public void setCreditId(int creditId) {
         this.creditId = creditId;
