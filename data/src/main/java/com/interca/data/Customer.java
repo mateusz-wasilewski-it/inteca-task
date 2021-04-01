@@ -4,6 +4,7 @@ public class Customer {
     private final int creditId;
     private final String firstName;
     private final String pesel;
+    private final String surname;
 
     public Customer(int creditId, String firstName, String pesel, String surname) {
         this.creditId = creditId;
@@ -27,8 +28,6 @@ public class Customer {
     public String getSurname() {
         return surname;
     }
-
-    private final String surname;
 
     @Override
     public String toString() {

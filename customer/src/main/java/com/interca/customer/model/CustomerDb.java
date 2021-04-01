@@ -68,4 +68,8 @@ public class CustomerDb {
         customerDb.setSurname(customer.getSurname());
         return customerDb;
     }
+    
+    public Customer toCustomerObject(){
+        return new Customer(getCreditId(),getFirstName(),getPesel(),getSurname());
+    }
 }

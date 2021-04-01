@@ -2,6 +2,8 @@ package com.interca.data;
 
 public class Product {
     private final int creditId;
+    private final String productName;
+    private final int value;
 
     public Product(int creditId, String productName, int value) {
         this.creditId = creditId;
@@ -20,7 +22,4 @@ public class Product {
     public int getValue() {
         return value;
     }
-
-    private final String productName;
-    private final int value;
 }

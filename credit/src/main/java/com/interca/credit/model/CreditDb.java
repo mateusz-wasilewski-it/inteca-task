@@ -3,6 +3,8 @@ package com.interca.credit.model;
 import com.interca.data.Credit;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -23,6 +25,7 @@ public class CreditDb {
         this.creditName = creditName;
     }
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     
     private String creditName;
@@ -32,6 +35,10 @@ public class CreditDb {
         creditDb.setId(credit.getID());
         creditDb.setCreditName(credit.getCreditName());
         return creditDb;
+    }
+    
+    public Credit toCreditObject(){
+        return new Credit(getCreditName(),getId());
     }
     
 }

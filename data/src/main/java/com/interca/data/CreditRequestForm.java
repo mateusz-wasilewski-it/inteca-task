@@ -1,24 +1,25 @@
 package com.interca.data;
 
-import java.util.Optional;
-
 public class CreditRequestForm {
     private final String creditName;
-    private static int creditId = 0;
+    private int creditId;
     private final String firstName;
     private final String pesel;
     private final String surname;
     private final String productName;
     private final int value;
-
+    
     public CreditRequestForm(String creditName, String firstName, String pesel, String surname, String productName, int value) {
         this.creditName = creditName;
-        CreditRequestForm.creditId++;
         this.firstName = firstName;
         this.pesel = pesel;
         this.surname = surname;
         this.productName = productName;
         this.value = value;
+    }
+
+    public void setCreditId(int creditId) {
+        this.creditId = creditId;
     }
 
     public Credit extractCreditObject() {

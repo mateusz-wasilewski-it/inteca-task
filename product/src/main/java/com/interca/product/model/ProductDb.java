@@ -1,6 +1,5 @@
 package com.interca.product.model;
 
-import com.interca.data.Customer;
 import com.interca.data.Product;
 
 import javax.persistence.Entity;
@@ -15,6 +14,10 @@ public class ProductDb {
     private int productId;
 
     private int CreditId;
+
+    private String productName;
+
+    private int value;
 
     public int getProductId() {
         return productId;
@@ -48,16 +51,15 @@ public class ProductDb {
         this.value = value;
     }
 
-    private String productName;
-
-    private int value;
-
-
     public static ProductDb parseFromProductObject(Product product) {
         ProductDb productDb = new ProductDb();
         productDb.setCreditId(product.getCreditId());
         productDb.setProductName(product.getProductName());
         productDb.setValue(product.getValue());
         return productDb;
+    }
+
+    public Product toProductObject() {
+        return new Product(getCreditId(), getProductName(), getValue());
     }
 }
