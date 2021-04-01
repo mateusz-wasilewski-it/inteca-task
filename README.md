@@ -20,7 +20,7 @@ docker run -p 8002:8002 --network="host" product
 POST request `http://localhost:8000/createCredit`
 ```
 {
-    "creditName":"name",
+    "creditName":"creditName",
     "firstName":"name",
     "surname":"surname",
     "pesel":"pesel",
